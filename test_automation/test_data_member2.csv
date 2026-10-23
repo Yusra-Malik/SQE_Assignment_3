@@ -1,0 +1,5 @@
+tc_id,input_text,expected_word_count,expected_has_spelling_error
+TC_M2_001,"Software testing ensures high code quality.",6,False
+TC_M2_002,"Thiss sentence contains severe typoes and errros.",7,True
+TC_M2_003,"FAST University campus in Pakistan.",5,False
+TC_M2_004,"Automated test execution with pytest suite.",6,False
