@@ -1,0 +1,5 @@
+text,expected_polarity_type
+"This feature is amazing and super helpful",positive
+"This application is very buggy and slow",negative
+"The system runs on Python version 3.10",neutral
+"",neutral
