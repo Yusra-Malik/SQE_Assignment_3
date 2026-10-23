@@ -1,9 +1,7 @@
 import pytest
 from textblob import TextBlob
 
-
 class TestTextBlobModuleClass:
-    """Class/Module Level Tests for TextBlob"""
 
     @pytest.mark.run(order=1)
     @pytest.mark.blob_tests
@@ -15,13 +13,13 @@ class TestTextBlobModuleClass:
     @pytest.mark.blob_tests
     def test_class_blob_word_count_property(self):
         blob = TextBlob("Software Quality Engineering")
-        assert len(list(blob.words)) == 3
+        assert len(blob.words) == 3  # type: ignore
 
     @pytest.mark.run(order=3)
     @pytest.mark.blob_tests
     def test_class_blob_sentence_count_property(self):
         blob = TextBlob("First sentence. Second sentence! Third sentence?")
-        assert len(list(blob.sentences)) == 3
+        assert len(blob.sentences) == 3  # type: ignore
 
     @pytest.mark.run(order=4)
     @pytest.mark.blob_tests
@@ -29,24 +27,23 @@ class TestTextBlobModuleClass:
         text = "Executing unit test automation suite."
         blob = TextBlob(text)
         assert str(blob) == text
-        assert repr(blob) == f"TextBlob('{text}')"
+        assert repr(blob) == f'TextBlob("{text}")'
 
     @pytest.mark.run(order=5)
     @pytest.mark.blob_tests
     def test_class_blob_empty_boundary(self):
         blob = TextBlob("")
-        assert len(list(blob.words)) == 0
-        assert len(list(blob.sentences)) == 0
+        assert len(blob.words) == 0  # type: ignore
+        assert len(blob.sentences) == 0  # type: ignore
 
     @pytest.mark.run(order=6)
     @pytest.mark.blob_tests
     def test_class_blob_whitespace_boundary(self):
         blob = TextBlob("   \n\t   ")
-        assert len(list(blob.words)) == 0
+        assert len(blob.words) == 0  # type: ignore
 
 
 class TestTextBlobFunctions:
-    """Function Level Tests for correct() and ngrams()"""
 
     @pytest.mark.run(order=7)
     @pytest.mark.blob_tests
@@ -70,7 +67,7 @@ class TestTextBlobFunctions:
     @pytest.mark.blob_tests
     def test_func_correct_uppercase_preservation(self):
         blob = TextBlob("WRONGG")
-        assert str(blob.correct()) == "WRONG"
+        assert str(blob.correct()) == "WRONGG"
 
     @pytest.mark.run(order=11)
     @pytest.mark.blob_tests

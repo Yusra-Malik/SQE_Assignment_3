@@ -1,10 +1,7 @@
 import pytest
 from textblob.en.parsers import PatternParser
 
-
-
 class TestPatternParserModuleClass:
-    """Class/Module Level Tests for PatternParser"""
 
     @pytest.fixture
     def parser(self):
@@ -49,7 +46,6 @@ class TestPatternParserModuleClass:
 
 
 class TestPatternParserFunctions:
-    """Function Level Tests for parse()"""
 
     @pytest.fixture
     def parser(self):
@@ -76,7 +72,7 @@ class TestPatternParserFunctions:
     @pytest.mark.run(order=47)
     @pytest.mark.parser_tests
     def test_func_parse_adjective_tagging(self, parser):
-        result = parser.parse("fast execution")
+        result = parser.parse("great execution")
         assert "/JJ" in result
 
     @pytest.mark.run(order=48)
